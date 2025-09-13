@@ -8,3 +8,6 @@
 - fuzzel
 - swaync
 
+## Screenshot
+
+![Screenshot](./static/screenshot.png)
