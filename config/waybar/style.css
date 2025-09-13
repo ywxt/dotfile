@@ -1,0 +1,167 @@
+* {
+  min-height: 0;
+  min-width: 0;
+  font-family: "monospace";
+  font-size: 0.98em;
+  font-weight: 500;
+}
+
+.module {
+  margin: 0rem 0.3rem;
+}
+
+#module-left,
+#module-right,
+#module-middle {
+  margin: 0;
+  padding: 0;
+}
+
+window#waybar {
+  transition-property: background-color;
+  transition-duration: 0.5s;
+  background-color: @theme_bg_color;
+  border: 1px solid @unfocused_borders;
+}
+
+#g-workspace,
+#g-datetime,
+#g-statusbar,
+#g-audio,
+#g-tray,
+#g-control {
+  padding: 0.0rem 0.2rem;
+  margin: 0.3rem 0.1rem;
+  border-radius: 10px;
+  background-color: @theme_base_color;
+  border: 1px solid @unfocused_borders;
+  /* box-shadow: 0 0 0 1px @unfocused_borders; */
+}
+
+
+window#waybar.empty #window {
+  background-color: transparent;
+}
+
+#g-window {
+  padding: 0rem 0rem;
+  margin: 0.3rem 0.2rem;
+  color: @theme_text_color;
+  background-color: @theme_bg_color;
+  border: 0px;
+}
+
+
+#workspaces button {
+  border-radius: 16px;
+  padding: 4px 9px;
+  margin: 0.1rem;
+  color: @theme_unfocused_text_color;
+
+}
+
+
+#workspaces button.active {
+  color: @theme_unfocused_selected_fg_color;
+  background-color: @theme_unfocused_selected_bg_color;
+}
+
+/* #workspaces button.active * {
+  color: @theme_unfocused_selected_fg_color;
+} */
+
+
+#workspaces button.urgent {
+  background-color: @warning_color;
+}
+
+#workspaces button:hover {
+  box-shadow: 0 0 0 1px @borders;
+  /* transition: none; */
+  text-shadow: inherit;
+  color: @theme_selected_fg_color;
+  background-color: @theme_selected_bg_color;
+}
+
+
+/* #workspaces button.active:hover {
+  color: inherit;
+  background-color: inherit;
+} */
+
+
+#g-control .module,
+#g-tray .module {
+  padding: 4px 9px;
+  margin: 0.1rem;
+  border-radius: 16px;
+}
+
+#g-control .module:hover {
+  box-shadow: 0 0 0 1px @borders;
+}
+
+/* #mpris.playing {
+  color: @love;
+}
+
+#mpris.paused {
+  color: @gold;
+}
+
+#custom-sep {
+  padding: 0px;
+  color: @rose;
+}
+
+#cpu {
+  color: @pine;
+}
+
+#memory {
+  color: @foam;
+}
+
+#clock {
+  color: @iris;
+}
+
+#clock.simpleclock {
+  color: @iris;
+} */
+
+
+
+/* #pulseaudio {
+  color: @foam;
+}
+
+#pulseaudio.muted {
+  color: @muted;
+}
+
+#custom-logo {
+  color: @rose;
+}
+
+#custom-power {
+  color: @foam;
+} */
+
+tooltip {
+  border: 1px solid @borders;
+  text-shadow: inherit;
+  background-color: @theme_base_color;
+  color: @theme_text_color;
+  border: 1px solid @unfocused_borders;
+}
+
+tooltip * {
+  padding: 2px;
+  /* margin: 0; */
+  color: @theme_text_color;
+}
+
+/* tooltip.empty {
+  background-color: transparent;
+} */

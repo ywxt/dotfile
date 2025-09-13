@@ -1,0 +1,232 @@
+{
+  "layer": "bottom",
+  "position": "top",
+  "height": 35,
+  "spacing": 2,
+  "exclusive": true,
+  "gtk-layer-shell": true,
+  "passthrough": false,
+  "fixed-center": true,
+  "modules-left": [
+    "group/g-workspace",
+    "group/g-statusbar"
+  ],
+  "modules-center": [
+    "group/g-window"
+  ],
+  "modules-right": [
+    "group/g-datetime",
+    "group/g-audio",
+    "group/g-tray",
+    "group/g-control"
+  ],
+  "group/g-workspace": {
+    "orientation": "horizontal",
+    "modules": [
+      "niri/workspaces"
+    ]
+  },
+  "group/g-window": {
+    "orientation": "horizontal",
+    "modules": [
+      "niri/window"
+    ]
+  },
+  "group/g-datetime": {
+    "orientation": "horizontal",
+    "modules": [
+      "clock",
+      "clock#simpleclock"
+    ]
+  },
+  "group/g-statusbar": {
+    "orientation": "horizontal",
+    "modules": [
+      "cpu",
+      "memory",
+      "battery",
+    ]
+  },
+  "group/g-audio": {
+    "orientation": "horizontal",
+    "modules": [
+      "pulseaudio#output",
+      "pulseaudio#input",
+    ]
+  },
+  "group/g-tray": {
+    "orientation": "horizontal",
+    "modules": [
+      "tray"
+    ]
+  },
+  "group/g-control": {
+    "orientation": "horizontal",
+    "modules": [
+      "custom/notification",
+      "group/g-power"
+    ]
+  },
+  "group/g-power": {
+    "orientation": "horizontal",
+    "drawer": {
+      "transition-duration": 600,
+      "children-class": "not-power",
+      "transition-left-to-right": false,
+    },
+    "modules": [
+      "custom/shutdown",
+      "custom/lock",
+      "custom/logout",
+      "custom/reboot"
+    ]
+  },
+  "battery": {
+    "interval": 60,
+    "states": {
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "{icon} {capacity}%",
+    "format-icons": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "max-length": 25,
+  },
+  "custom/spotify": {
+    "format": "  {}",
+    "return-type": "json",
+    "on-click": "playerctl play-pause",
+    "on-click-right": "spotifatius toggle-liked",
+    "on-click-middle": "playerctl spotify next",
+    "exec": "spotifatius monitor",
+  },
+  "mpris": {
+    "player": "spotify",
+    "dynamic-order": [
+      "artist",
+      "title"
+    ],
+    "format": "{player_icon} {dynamic}",
+    "format-paused": "{status_icon} <i>{dynamic}</i>",
+    "status-icons": {
+      "paused": "",
+    },
+    "player-icons": {
+      "default": "",
+    },
+  },
+  "niri/workspaces": {
+    "on-click": "activate",
+    "format": "{value}",
+    "disable-scroll": false,
+    "active-only": false,
+  },
+  "niri/window": {
+    "icon": true,
+    "icon-size": 16,
+    "format": "{title}",
+    "max-length": 40
+  },
+  "tray": {
+    "show-passive-items": true,
+    "spacing": 10,
+  },
+  "clock#simpleclock": {
+    "format": " {:%H:%M}",
+    "tooltip-format": "{:%T}"
+  },
+  "clock": {
+    "format": " {:L%Y-%m-%d %A}",
+    "calendar": {
+      "format": {
+        "days": "<span weight='normal'>{}</span>",
+        "months": "<span color='#cdd6f4'><b>{}</b></span>",
+        "today": "<span color='#f38ba8' weight='700'><u>{}</u></span>",
+        "weekdays": "<span color='#f9e2af'><b>{}</b></span>",
+        "weeks": "<span color='#a6e3a1'><b>W{}</b></span>",
+      },
+      "mode": "month",
+      "mode-mon-col": 1,
+      "on-scroll": 1,
+    },
+    "tooltip-format": "<span><tt><small>{calendar}</small></tt></span>",
+  },
+  "cpu": {
+    "format": " {usage}%",
+    "tooltip": true,
+    "interval": 1,
+  },
+  "memory": {
+    "format": " {used:0.1f}G",
+  },
+  "pulseaudio#input": {
+    "format-source": " {volume}%",
+    "format-source-muted": " off",
+    "format": "{format_source}",
+    "scroll-step": 1,
+    "smooth-scrolling-threshold": 1,
+    "max-volume": 100,
+    "on-click": "pactl set-source-mute @DEFAULT_SOURCE@ toggle",
+    "on-click-middle": "pavucontrol -t 4",
+    "on-scroll-up": "pactl set-source-volume @DEFAULT_SOURCE@ +1%",
+    "on-scroll-down": "pactl set-source-volume @DEFAULT_SOURCE@ -1%",
+  },
+  "pulseaudio#output": {
+    "format": "{icon} {volume}%",
+    "format-muted": " off",
+    "format-icons": {
+      "headphone": "",
+      "default": [
+        "",
+        "",
+        ""
+      ]
+    },
+    "max-volume": 100,
+    "scroll-step": 1,
+    "smooth-scrolling-threshold": 1,
+    "on-click-middle": "pavucontrol",
+  },
+  "custom/sep": {
+    "format": "|",
+    "tooltip": false,
+  },
+  "custom/shutdown": {
+    "tooltip-format": "Power off",
+    "on-click": "shutdown now",
+    "format": "⏻",
+  },
+  "custom/reboot": {
+    "tooltip-format": "Reboot",
+    "on-click": "reboot",
+    "format": "󰜉",
+  },
+  "custom/logout": {
+    "tooltip-format": "Logout",
+    "on-click": "niri msg action quit",
+    "format": "󰗼",
+  },
+  "custom/lock": {
+    "tooltip-format": "Lock screen",
+    "on-click": "loginctl lock-session",
+    "format": "󰍁",
+  },
+  "custom/notification": {
+    "escape": true,
+    "exec": "swaync-client -swb",
+    "exec-if": "which swaync-client",
+    "format": "{icon}",
+    "format-icons": {
+      "none": "󰅺",
+      "notification": "󰡟",
+    },
+    "on-click": "sleep 0.1 && swaync-client -t -sw",
+    "return-type": "json",
+    "tooltip": false
+  }
+}

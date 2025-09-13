@@ -1,0 +1,12 @@
+[Trigger]
+Operation = Install
+Operation = Upgrade
+Operation = Remove
+Type = Package
+Target = *
+
+[Action]
+Description = Export manually installed top-level packages list...
+When = PostTransaction
+Exec = /bin/sh -c 'pacman -Qqe > /var/lib/pacman/pkgs-$(uname -n).txt'
+
