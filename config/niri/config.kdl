@@ -318,6 +318,11 @@ window-rule {
     default-column-width {}
 }
 
+window-rule {
+   match app-id=r#"^org\.pulseaudio\.pavucontrol$"#
+   open-floating true
+}
+
 /-window-rule {
     match app-id=r#"^foot$"#
     open-maximized false
