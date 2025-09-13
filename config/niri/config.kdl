@@ -382,9 +382,9 @@ binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
 
     // Suggested binds for running programs: terminal, app launcher, screen locker.
-    Mod+Return hotkey-overlay-title="Open a Terminal: foot" { spawn "foot"; }
-    Mod+D hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
-    Super+Alt+L hotkey-overlay-title="Lock the Screen: hyprlock" { spawn "hyprlock"; }
+    Mod+Return hotkey-overlay-title="Open a Terminal: foot" { spawn-sh "uwsm app -- foot"; }
+    Mod+D hotkey-overlay-title="Run an Application: fuzzel" { spawn-sh "uwsm app -- fuzzel"; }
+    Super+Alt+L hotkey-overlay-title="Lock the Screen: hyprlock" { spawn-sh "uwsm app -- hyprlock"; }
 
     // You can also use a shell. Do this if you need pipes, multiple commands, etc.
     // Note: the entire command goes as a single argument in the end.
