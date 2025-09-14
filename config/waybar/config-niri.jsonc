@@ -198,12 +198,12 @@
   },
   "custom/shutdown": {
     "tooltip-format": "Power off",
-    "on-click": "shutdown now",
+    "on-click": "./fuzzel-confirm.sh 'Shutdown?' 'shutdown now'",
     "format": "⏻",
   },
   "custom/reboot": {
     "tooltip-format": "Reboot",
-    "on-click": "reboot",
+    "on-click": "./fuzzel-confirm.sh 'Reboot?' 'reboot'",
     "format": "󰜉",
   },
   "custom/logout": {
