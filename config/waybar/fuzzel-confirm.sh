@@ -10,22 +10,21 @@ TIMEOUT="${3:-30}"   # 默认30秒
 FULL_PROMPT="$PROMPT (Yes after ${TIMEOUT}s)"
 
 # 倒计时结束后默认执行 Yes
-CHOICE=$(timeout "$TIMEOUT" \
-    printf 'Yes\nNo' | fuzzel -d --lines 2 --prompt "$FULL_PROMPT")
+CHOICE=$(printf "Yes\nNo\n" | timeout "$TIMEOUT" fuzzel -d --lines 2 --prompt "$FULL_PROMPT")
+STATUS=$?   # 保存退出码
 
-# 超时或未选择则默认为 Yes
-if [ -z "$CHOICE" ]; then
-    CHOICE="Yes"
-fi
-
-case "$CHOICE" in
-    "Yes")
+case $STATUS in
+    0)  # 用户选择了选项
+        if [ "$CHOICE" = "Yes" ]; then
+            eval "$YES_CMD"
+        fi
+        ;;
+    124) # 超时
+        echo "超时，自动选择 Yes"
         eval "$YES_CMD"
         ;;
-    "No")
-        exit 0
-        ;;
-    *)
+    *)  # 其他异常
+        echo "未選擇，退出码=$STATUS"
         exit 1
         ;;
 esac

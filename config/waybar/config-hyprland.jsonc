@@ -199,17 +199,17 @@
   },
   "custom/shutdown": {
     "tooltip-format": "Power off",
-    "on-click": "./fuzzel-confirm.sh 'Shutdown?' 'shutdown now'",
+    "on-click": "${XDG_CONFIG_HOME:-$HOME/.config}/waybar/fuzzel-confirm.sh 'Shutdown?' 'shutdown now'",
     "format": "⏻",
   },
   "custom/reboot": {
     "tooltip-format": "Reboot",
-    "on-click": "./fuzzel-confirm.sh 'Reboot?' 'reboot'",
+    "on-click": "${XDG_CONFIG_HOME:-$HOME/.config}/waybar/fuzzel-confirm.sh 'Reboot?' 'reboot'",
     "format": "󰜉",
   },
   "custom/logout": {
     "tooltip-format": "Logout",
-    "on-click": "./fuzzel-confirm.sh 'Logout?' 'hyprctl dispatch exit'",
+    "on-click": "${XDG_CONFIG_HOME:-$HOME/.config}/waybar/fuzzel-confirm.sh 'Logout?' 'hyprctl dispatch exit'",
     "format": "󰗼",
   },
   "custom/lock": {
