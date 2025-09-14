@@ -7,6 +7,9 @@
 - foot
 - fuzzel
 - swaync
+- hyprlock
+- hypridle
+- hyprpaper
 
 ## Screenshot
 
