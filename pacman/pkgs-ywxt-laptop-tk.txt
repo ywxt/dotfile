@@ -26,6 +26,7 @@ flclash-bin
 foot
 fuse2
 fuzzel
+gamescope
 gendesk
 git
 git-credential-oauth
@@ -47,6 +48,7 @@ libva-intel-driver
 linux
 linux-firmware
 linuxqq
+mesa-utils
 mission-center
 neovim
 network-manager-applet
@@ -74,6 +76,7 @@ scala3
 selectdefaultapplication-fork-git
 slurp
 sof-firmware
+steam
 swaync
 tela-circle-icon-theme-all
 telegram-desktop
