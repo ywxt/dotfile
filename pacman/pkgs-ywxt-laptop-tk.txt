@@ -10,6 +10,7 @@ bash-completion
 bat
 brightnessctl
 btrfs-progs
+clash-verge-rev-bin
 dialog
 dotnet-sdk
 efibootmgr
@@ -22,7 +23,6 @@ fcitx5-rime
 fcitx5-skin-fluentdark-git
 fcitx5-skin-fluentlight-git
 firefox
-flclash-bin
 foot
 fuse2
 fuzzel
@@ -43,6 +43,7 @@ intellij-idea-ultimate-edition
 jdk-openjdk
 jdk21-openjdk
 kvantum
+libkeybinder3
 libpulse
 libva-intel-driver
 linux
@@ -106,6 +107,5 @@ xorg-server
 xorg-xinit
 xwayland-satellite
 yay-bin
-yay-bin-debug
 zram-generator
 zsh

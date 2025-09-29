@@ -141,6 +141,9 @@ application/vnd.rar=org.kde.ark.desktop
 application/x-tar=org.kde.ark.desktop
 application/zip=org.kde.ark.desktop
 x-scheme-handler/termianl=foot-open.desktop
+x-scheme-handler/clash-nyanpasu=clash-nyanpasu-handler.desktop
+x-scheme-handler/clash=clash-verge.desktop
+x-scheme-handler/clash-verge=clash-verge-handler.desktop
 
 [Added Associations]
 image/png=code.desktop;
