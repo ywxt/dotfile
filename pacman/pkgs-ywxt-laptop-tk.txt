@@ -43,7 +43,6 @@ intellij-idea-ultimate-edition
 jdk-openjdk
 jdk21-openjdk
 kvantum
-libkeybinder3
 libpulse
 libva-intel-driver
 linux
