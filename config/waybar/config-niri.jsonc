@@ -60,9 +60,16 @@
       "tray"
     ]
   },
+  "group/g-devices": {
+    "orientation": "horizontal",
+    "modules": [
+      "bluetooth"
+    ]
+  },
   "group/g-control": {
     "orientation": "horizontal",
     "modules": [
+      "group/g-devices",
       "custom/notification",
       "group/g-power"
     ]
@@ -191,6 +198,19 @@
     "scroll-step": 1,
     "smooth-scrolling-threshold": 1,
     "on-click-middle": "pavucontrol",
+    "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+  },
+  "bluetooth": {
+    "format": "󰂯",
+    "format-disabled": "󰂲",
+    "format-connected": "󰂱",
+    "format-connected-battery": "󰥉",
+    // "format-device-preference": [ "device1", "device2" ], // preference list deciding the displayed device
+    "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
+    "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
+    "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+    "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
+    "on-click": "blueman-manager",
   },
   "custom/sep": {
     "format": "|",

@@ -8,6 +8,7 @@ base
 base-devel
 bash-completion
 bat
+blueman
 brightnessctl
 btrfs-progs
 clash-verge-rev-bin
