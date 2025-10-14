@@ -144,6 +144,7 @@ x-scheme-handler/termianl=foot-open.desktop
 x-scheme-handler/clash-nyanpasu=clash-nyanpasu-handler.desktop
 x-scheme-handler/clash=clash-verge.desktop
 x-scheme-handler/clash-verge=clash-verge-handler.desktop
+x-scheme-handler/baiduyunguanjia=baidunetdisk.desktop
 
 [Added Associations]
 image/png=code.desktop;

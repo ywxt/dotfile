@@ -4,6 +4,7 @@ android-studio
 android-udev
 ark
 aspnet-targeting-pack
+baidunetdisk-bin
 base
 base-devel
 bash-completion
